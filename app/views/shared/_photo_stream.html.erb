@@ -1,0 +1,11 @@
+<% @photos.each do |photo| %>
+  <% begin %>
+    <%= link_to(image_tag(
+        FlickRaw.url_q(photo), class: 'stream'),
+        FlickRaw.url_photopage(photo_info(photo))) %>
+  <!-- <% rescue %>
+    <!-- To account for instances where FlickRaw returns a non-valid image response from a photoID when using flickr.photos.getRecent -->
+    <!--<% flash.now[:danger] = 'Sorry, there was an error retrieving an image.'%>
+    <% redirect_to root_path %>
+  <% end %> -->
+<% end %>
