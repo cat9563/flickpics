@@ -1,3 +1,24 @@
-// Place all the styles related to the StaticPages controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+*{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+.menu-container {
+  background-color: #234567;
+  width: 100%;
+  color: rgb(236,236,236);
+  padding: 40px 0;
+  display: flex;
+  justify-content: flex-start;
+}
+.menu-container{
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  font-size: 32px;
+  font-family: sans-serif;
+}
