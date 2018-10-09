@@ -1,0 +1,14 @@
+<%= form_tag('/', method: 'get') do %>
+  <%= text_field_tag :userID, params[:userID], { placeholder: "Enter a userID", class: 'form-control' } %>
+  <br>
+  <div class='row'>
+    <div class='col-xs-6'>
+      <%= submit_tag 'Search', { class: 'btn btn-primary btn-block index-btn' } %>
+    </div>
+    <div class='col-xs-6'>
+      <%= link_to('New Search', root_path, class: 'btn btn-warning btn-block index-btn')%>
+    </div>
+    <br>
+<%end%>
+<div class='row'>
+<div class='col text-center'>

@@ -1,8 +1,5 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= yield(:title) %>| Flick Pics API </title>
-  </head>
   <div class='menu-container'>
     <div class='menu'>FLickPics</div>
   </div>
@@ -11,34 +8,9 @@
     <div class='row'>
       <div class='col-xs-8 col-xs-offset-2 col-md-6 col-md-offset-3'>
         <h1>Flicker API Image Search </h1>
-        <%= form_tag('/', method: 'get') do %>
-          <%= text_field_tag :userID, params[:userID], { placeholder: "Enter a userID", class: 'form-control' } %>
-          <br>
-          <div class='row'>
-            <div class='col-xs-6'>
-              <%= submit_tag 'Search', { class: 'btn btn-primary btn-block index-btn' } %>
-            </div>
-            <div class='col-xs-6'>
-              <%= link_to('New Search', root_path, class: 'btn btn-warning btn-block index-btn')%>
-            </div>
-            <br>
-        <%end%>
-        <div class='row'>
-        <div class='col text-center'>
+        <%= render 'body' %>
           <br><br>
-          <% if params[:userID].present? %>
-            <% if valid_user?(params[:userID]) %>
-              <% user_photos(params[:userID]).each do |photo| %>
-                <%= link_to(image_tag(FlickRaw.url_q(photo)), url: FlickRaw.url_photopage(photo)) %>
-              <% end %>
-            <% else %>
-              <% @photos = recent_photos %>
-              <%= render 'shared/photo_stream', locals: { photos: @photos } %>
-            <% end %>
-          <% else %>
-            <% @photos = recent_photos %>
-            <%= render 'shared/photo_stream', locals: { photos: @photos } %>
-          <% end %>
+          <%= render 'homePartial' %>
         </div>
   </body>
 </html>
